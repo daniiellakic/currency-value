@@ -1,48 +1,84 @@
-import React from 'react'
-import CRR from '../assets/crr-image.png'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Featured.css'
-import { useState, useEffect } from 'react'
+import euro from '../assets/euro.png'
+import pound from '../assets/pound.png'
+import crowns from '../assets/crowns-48.png'
+import dinar from '../assets/dinar.png'
+
 
 const Featured = () => {
 
   const [data, setData] = useState(null)
 
-  const url = 'https://currency-converter5.p.rapidaphttps://exchange-rates.abstractapi.com/v1/live/?api_key=ae0c099ec0cd4f01891dc30767c8717d&base=USD&target=EURi.https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest/currency/convert'
-  
-  // GET API THAT RETURNS DATA LIKE IN VIDEO AS IMAGE AND ELSSE //
-
+  const url = 'https://v6.exchangerate-api.com/v6/d2006218adc6ca535cc607c9/latest/USD'
 
   useEffect(() => {
-    axios.get(url).then((response) => {
+    axios.get(url)
+    .then((response) => {
         setData(response.data)
-    }).catch((error) => {
+    })
+    .catch((error) => {
         console.log(error)
     })
-    }, [])
+  }, [])
 
-    console.log(data)
+   console.log(data)
+
+  if (!data) return null
 
   return (
     <div className='featured'>
         <div className="container">
             <div className="left">
-                <h2>Explore currencies like Dollar, Euro, Pound and more</h2>
+                <h1>Explore currencies like Dollar, Euro, Pound and more</h1>
                 <p>Check live exchange rates for desire currency</p>
                 <button className='btn'>Check more currencies</button>
             </div>
 
             <div className="right">
+            <p>Latest Rates date: {data.time_last_update_utc}</p>
+              <div className="card">
                 <div className="top">
-                    <img src={CRR} alt="" />
-                </div>
-                <div>
-                    <h5>Euro</h5>
-                    <p>$1,2</p>
-                </div>
-            </div>
+                    <img src={euro} alt='' />
+                    <div>
+                      <h5>{data.base_code} Amount: 1 </h5>
+                      <h5>Euro: {data.conversion_rates.EUR}</h5>   
+                    </div>
+                </div> 
+              </div>
+              <div className="card">
+                <div className="top">
+                    <img src={pound} alt='' />
+                    <div>
+                      <h5>{data.base_code} Amount: 1 </h5>
+                      <h5>British Pound: {data.conversion_rates.GBP}</h5> 
+                    </div>  
+                </div> 
+              </div>
+              <div className="card">
+                <div className="top">
+                    <img src={crowns} alt='' />
+                    <div>
+                      <h5>{data.base_code} Amount: 1 </h5>
+                      <h5>Swedish Crowns: {data.conversion_rates.SEK}</h5>   
+                    </div>
+                </div> 
+              </div>
+              <div className="card">
+                <div className="top">
+                    <img src={dinar} alt='' />
+                    <div>
+                      <h5>{data.base_code} Amount: 1 </h5>
+                      <h5>Serbian Dinar: {data.conversion_rates.RSD}</h5>   
+                    </div>
+                </div> 
+              </div>
+            <div> 
+
+          </div>
         </div>
-        
+      </div>
     </div>
   )
 }
