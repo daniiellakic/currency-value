@@ -23,8 +23,6 @@ const Featured = () => {
     })
   }, [])
 
-   console.log(data)
-
   if (!data) return null
 
   return (
