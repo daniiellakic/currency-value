@@ -31,7 +31,7 @@ const Featured = () => {
     <div className='featured'>
         <div className="container">
             <div className="left">
-                <h1>Explore currencies like Dollar, Euro, Pound and more</h1>
+                <h1>Explore currencies like Dollar, Euro, Pound and more.</h1>
                 <p>Check live exchange rates for desire currency</p>
                 <button className='btn'>Check more currencies</button>
             </div>
@@ -43,7 +43,7 @@ const Featured = () => {
                     <img src={euro} alt='' />
                     <div>
                       <h5>{data.base_code} Amount: 1 </h5>
-                      <h5>Euro: {data.conversion_rates.EUR}</h5>   
+                      <h5>Euro: <span className='red'>{data.conversion_rates.EUR}</span></h5>   
                     </div>
                 </div> 
               </div>
@@ -52,7 +52,7 @@ const Featured = () => {
                     <img src={pound} alt='' />
                     <div>
                       <h5>{data.base_code} Amount: 1 </h5>
-                      <h5>British Pound: {data.conversion_rates.GBP}</h5> 
+                      <h5>British Pound: <span className='red'>{data.conversion_rates.GBP}</span></h5> 
                     </div>  
                 </div> 
               </div>
@@ -61,7 +61,7 @@ const Featured = () => {
                     <img src={crowns} alt='' />
                     <div>
                       <h5>{data.base_code} Amount: 1 </h5>
-                      <h5>Swedish Crowns: {data.conversion_rates.SEK}</h5>   
+                      <h5>Swedish Crowns: <span className='red'>{data.conversion_rates.SEK}</span></h5>   
                     </div>
                 </div> 
               </div>
@@ -70,7 +70,7 @@ const Featured = () => {
                     <img src={dinar} alt='' />
                     <div>
                       <h5>{data.base_code} Amount: 1 </h5>
-                      <h5>Serbian Dinar: {data.conversion_rates.RSD}</h5>   
+                      <h5>Serbian Dinar: <span className='red'>{data.conversion_rates.RSD}</span></h5>   
                     </div>
                 </div> 
               </div>
