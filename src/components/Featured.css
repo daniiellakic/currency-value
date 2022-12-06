@@ -66,18 +66,23 @@
 
 @media screen and (max-width: 940px) {
     .featured .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 2fr);
     }
     .featured .right {
-        margin: 50px;
+        margin: 100px;
         margin-top: 0px;
+        flex-direction: row;
     }
     .featured .left{
         padding-bottom: 2rem;
     }
     .featured .left .btn {
-        align-self: center;
+        align-self: left;
     }
+    .featured .right .card {
+        padding: 22px 22px;
+    }
+    
 }
 
 

@@ -10,18 +10,18 @@ const Converter = () => {
     const [info, setInfo] = useState([]);
     const [input, setInput] = useState(0);
     const [from, setFrom] = useState("usd");
-    const [to, setTo] = useState("inr");
+    const [to, setTo] = useState("sek");
     const [options, setOptions] = useState([]);
     const [output, setOutput] = useState(0);
 
      // Calling the api whenever the dependency changes
     useEffect(() => {
-        axios.get(
-    `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}.json`)
+        axios.get(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}.json`)
     .then((res) => {
         setInfo(res.data[from]);
         })
     }, [from]);
+
     
     // Calling the convert function whenever
     // a user switches the currency
@@ -29,6 +29,8 @@ const Converter = () => {
         setOptions(Object.keys(info));
         convert();
     }, [info])
+
+    console.log(info)
     
     function convert() {
         var rate = info[to];
@@ -49,7 +51,7 @@ const Converter = () => {
         <div className="converter-form">
             <div className="container-converter">
                 <div className="convertor-left">
-                <h3>Amount</h3>
+                <h3>Amount</h3> 
                 <input className='convertor-input' type="text" 
                     placeholder="Enter the amount" 
                     onChange={(e) => setInput(e.target.value)} />
@@ -65,19 +67,20 @@ const Converter = () => {
                                 onClick={() => { flip()}}/>
                 </div>
                 <div className="convertor-right">
-                <h3>To</h3>
+                <h3>To</h3> 
                 <Dropdown options={options} 
                             onChange={(e) => {setTo(e.value)}} 
                 value={to} placeholder="To" />
                 </div>
-            </div>
+            </div> <br />
             <div className="result">
                 <button className="btn" onClick={()=>{convert()}}>Convert</button>
-                <h3>Converted Amount: {input+" "+from+" = "+output.toFixed(2) + " " + to}</h3>
+                <h3> {input+" "+from+" is equevalent to " }</h3>
+                <h2> {+output.toFixed(2)+ " " + to}</h2>
         
             </div>
-            </div>
         </div>
+    </div>
   )
 }
 

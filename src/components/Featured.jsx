@@ -21,7 +21,7 @@ const Featured = () => {
     .catch((error) => {
         console.log(error)
     })
-  }, [])
+  }, []);
 
   if (!data) return null
 

@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Featured from "./components/Featured"
 import Converter from "./components/Converter.jsx"
+import News from "./components/News";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Hero/>
     <Featured/>
     <Converter/>
+    <News/>
 
     </>
   );
