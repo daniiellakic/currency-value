@@ -2,7 +2,7 @@ import React from 'react'
 import {FaFacebook, FaGithub, FaLinkedin, FaTwitter} from 'react-icons/fa'
 import './Footer.css'
 
-const News = () => {
+const Footer = () => {
   return (
     <div className='footer'>
             <div className='container'>
@@ -49,4 +49,4 @@ const News = () => {
   )
 }
 
-export default News
+export default Footer

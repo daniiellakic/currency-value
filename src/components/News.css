@@ -1,0 +1,10 @@
+.news-container{
+    width: 500px;
+    padding: 40px;
+    border: 1px solid;
+    margin-bottom: 20px;
+}
+
+.news-img{
+    width: 300px;
+}
