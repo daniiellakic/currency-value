@@ -32,3 +32,17 @@
 .news-item p{
     padding: 5px;
 }
+
+@media screen and (max-width: 940px) {
+    .news{
+        grid-template-columns:repeat(2, 1fr);
+        margin: 10px 0px  15px 25px;
+    }  
+}
+
+@media screen and (max-width: 478px) {
+    .news{
+        grid-template-columns:repeat(1, 1fr);
+        margin: 10px 0px  20px 25px;
+    }
+}
