@@ -43,6 +43,7 @@
     border: 1px solid #fff;
     box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;
     text-align: center;
+    justify-content: center;
 }
 
 .featured .right .card .top .red {
@@ -87,10 +88,11 @@
 
 
 @media screen and (max-width: 478px) {
-    .featured .container .right .card {
+    .featured .container .right  .card  {
         width: 100%;
         justify-content: center;
     }
+
     .featured .left{
         padding-bottom: 2rem;
     }

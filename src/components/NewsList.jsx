@@ -23,7 +23,7 @@ const NewsList = () => {
                 return(
                      <News 
                         title={article.title}
-                        description={article.description}
+                        //description={article.description}
                         url={article.url}
                         urlToImage={article.urlToImage} 
                     />
