@@ -6,7 +6,6 @@ import Featured from "./components/Featured"
 import Converter from "./components/Converter.jsx"
 import NewsList from "./components/NewsList";
 import Footer from "./components/Footer";
-import News from "./components/News";
 
 
 function App() {

@@ -26,6 +26,9 @@
 .news-item a, h3{
     color: var(--primary);
     padding: 2px;
+    height: 100px;
+    font-weight: bolder;
+    line-height: 30px;
 }
 .news-item h3 :hover{
     text-decoration: underline;
